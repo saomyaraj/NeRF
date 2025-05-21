@@ -1,0 +1,37 @@
+# NeRF Configuration File
+
+# Mode settings
+mode: train # Options: train, eval, render
+
+# Data settings
+data_dir: ./data
+output_dir: ./output
+img_size: [400, 400] # [width, height]
+
+# Model settings
+pos_encoding_freqs: 10
+dir_encoding_freqs: 4
+hidden_dim: 256
+num_layers: 8
+
+# Training settings
+batch_size: 1024 # Number of rays per batch
+num_epochs: 50
+learning_rate: 5.0e-4
+use_amp: true
+white_background: true
+
+# Rendering settings
+near: 2.0
+far: 6.0
+chunk_size: 32768 # 32*1024
+render_path: spiral
+render_frames: 120
+
+# Checkpoint settings
+checkpoint: null # Path to checkpoint for loading weights
+validate_every: 1
+save_every: 10
+
+# Device settings
+device: cuda # Options: cuda, cpu
